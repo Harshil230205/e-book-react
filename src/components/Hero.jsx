@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import Wrapper from "./Wrapper";
+import HeroImg from "../assets/heroImg.png";
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -114,11 +114,7 @@ const Hero = () => {
       </div>
 
       <div className="hidden md:flex justify-end">
-        <img
-          src="/src/assets/image.png"
-          alt="Reader"
-          className="w-full rounded-4xl"
-        />
+        <img src={HeroImg} alt="Reader" className="w-full rounded-4xl" />
       </div>
     </div>
   );
