@@ -10,7 +10,6 @@ const Footer = () => {
           Explore a vast collection of e-books and read anytime, anywhere.
         </p>
 
-        {/* Social Icons */}
         <div className="flex justify-center gap-6 mt-4">
           <a href="#" className="hover:text-white transition">
             <FaFacebookF className="w-6 h-6" />
@@ -23,7 +22,6 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Copyright */}
         <div className="mt-6 text-sm text-gray-500">
           © {new Date().getFullYear()} WeTeach. All rights reserved.
         </div>
