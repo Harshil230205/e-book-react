@@ -3,7 +3,7 @@ import Wrapper from "./Wrapper";
 import { Link, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
-const Navbar = () => {
+const AdminNavbar = () => {
   const token = localStorage.getItem("bookToken");
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,20 +18,17 @@ const Navbar = () => {
           <Link to="/" className="text-gray-600">
             Home
           </Link>
-          <Link to="/books" className="text-gray-600">
+          <Link to="/admin/book-list" className="text-gray-600">
             Books
           </Link>
-          <Link to="/books/upload" className="text-gray-600">
-            Upload
-          </Link>
-          <Link to="/books/my-books" className="text-gray-600">
-            My books
+          <Link to="/admin/user-list" className="text-gray-600">
+            Users
           </Link>
           {token ? (
             <button
               onClick={() => {
                 localStorage.clear();
-                navigate("/login");
+                navigate("/");
               }}
               className="cursor-pointer bg-white text-black px-6 py-2 rounded-full border-2 border-black hover:bg-black hover:text-white transition duration-300">
               Log Out
@@ -39,14 +36,9 @@ const Navbar = () => {
           ) : (
             <>
               <Link
-                to="login"
+                to="/admin/login"
                 className="bg-black text-white px-6 py-2 rounded-full border-2 border-black hover:bg-white hover:text-black transition duration-300 mr-3">
                 Log in
-              </Link>
-              <Link
-                to="signup"
-                className="bg-white text-black px-6 py-2 rounded-full border-2 border-black hover:bg-black hover:text-white transition duration-300">
-                Sign Up
               </Link>
             </>
           )}
@@ -67,22 +59,16 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/books"
+              to="/admin/book-list"
               className="text-gray-600"
               onClick={() => setMenuOpen(false)}>
               Books
             </Link>
             <Link
-              to="/books/upload"
+              to="/admin/user-list"
               className="text-gray-600"
               onClick={() => setMenuOpen(false)}>
-              Upload
-            </Link>
-            <Link
-              to="/books/my-books"
-              className="text-gray-600"
-              onClick={() => setMenuOpen(false)}>
-              My books
+              Users
             </Link>
             {token ? (
               <button
@@ -117,4 +103,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AdminNavbar;

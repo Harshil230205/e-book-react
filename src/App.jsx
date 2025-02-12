@@ -5,7 +5,6 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import BookDetail from "./pages/BookDetail";
 import UploadBook from "./pages/UploadBook";
@@ -17,29 +16,45 @@ import AdminLogin from "./pages/AdminLogin";
 import ApproveBooks from "./pages/ApproveBooks";
 import UsersList from "./pages/UserList";
 import Books from "./pages/Books";
+import AdminNavbar from "./components/AdminNavbar";
+import MyBooks from "./pages/MyBooks";
 
-const ProtectedRoute = ({ children, auth }) => {
-  return auth ? children : <Navigate to="/login" />;
+const ProtectedRoute = ({ children, auth, redirectTo }) => {
+  return auth ? children : <Navigate to={redirectTo} />;
 };
 
 const AppContent = () => {
   const auth = localStorage.getItem("bookToken");
+  const adminAuth = localStorage.getItem("adminBookToken");
   const location = useLocation();
 
-  const hideNavbar =
-    location.pathname === "/login" ||
-    location.pathname === "/signup" ||
-    location.pathname === "/admin/login";
+  const isAdminRoute = location.pathname.startsWith("/admin");
+  const showNavbar = !["/login", "/signup", "/admin/login"].includes(
+    location.pathname
+  );
 
   return (
     <>
       <Toaster position="top-right" />
-      {!hideNavbar && <Navbar />}
+      {showNavbar && (isAdminRoute ? <AdminNavbar /> : <Navbar />)}
       <Routes>
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/book-list" element={<ApproveBooks />} />
-        <Route path="/admin/uesr-list" element={<UsersList />} />
-
+        <Route
+          path="/admin/book-list"
+          element={
+            <ProtectedRoute auth={adminAuth} redirectTo="/admin/login">
+              <ApproveBooks />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/user-list"
+          element={
+            <ProtectedRoute auth={adminAuth} redirectTo="/admin/login">
+              <UsersList />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Home />} />
@@ -48,8 +63,16 @@ const AppContent = () => {
         <Route
           path="/books/upload"
           element={
-            <ProtectedRoute auth={auth}>
+            <ProtectedRoute auth={auth} redirectTo="/login">
               <UploadBook />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/books/my-books"
+          element={
+            <ProtectedRoute auth={auth} redirectTo="/login">
+              <MyBooks />
             </ProtectedRoute>
           }
         />

@@ -51,7 +51,7 @@ const AdminLogin = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        navigate("/");
+        navigate("/admin/book-list");
         localStorage.setItem("adminBookToken", data.token);
         toast.success("Login successfully");
       } else {
