@@ -29,7 +29,7 @@ const features = [
 const EbookFeatures = () => {
   return (
     <section className="py-16">
-      <div className="text-center px-6">
+      <div className="text-center">
         <h2 className="text-4xl font-bold text-gray-900">
           Why Choose Our E-Books?
         </h2>

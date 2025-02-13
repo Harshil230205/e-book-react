@@ -13,7 +13,7 @@ const SubscribeSection = () => {
           <input
             type="email"
             placeholder="Enter your email"
-            className="w-full sm:flex-1 px-6 py-3 rounded-lg border focus:outline-none bg-white"
+            className="w-full sm:flex-1 px-6 py-3 rounded-lg border focus:outline-none bg-white pl-3"
           />
           <button className="w-full sm:w-auto px-8 py-3 bg-orange-400 text-white rounded-lg hover:bg-orange-500">
             Subscribe
