@@ -183,13 +183,8 @@ const ApproveBooks = () => {
                               action: "delete",
                             })
                           }
-                          disabled={book.isApproved}
-                          className={`inline-flex items-center px-3 py-1 border border-red-500 text-red-500 rounded-md text-sm font-medium transition-colors
-      ${
-        book.isApproved
-          ? "opacity-50 cursor-not-allowed"
-          : "hover:bg-red-50 cursor-pointer"
-      }`}>
+                          // disabled={book.isApproved}
+                          className={`inline-flex items-center px-3 py-1 border border-red-500 text-red-500 rounded-md text-sm font-medium transition-colors`}>
                           <FiX className="w-4 h-4 mr-1" />
                           Delete
                         </button>
