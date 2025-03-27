@@ -40,8 +40,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-      <div className="text-black relative order-2 md:order-1">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-cente  border-">
+      <div className="text-black relative order-2 md:order-1 \">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
           READ AND ADD <br className="hidden sm:block" /> YOUR INSIGHT
         </h1>
@@ -106,6 +106,7 @@ const Hero = () => {
         />
       </div>
     </div>
+    
   );
 };
 

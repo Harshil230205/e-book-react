@@ -79,40 +79,52 @@ const UploadBook = () => {
     }
   };
 
-  const categories = [
-    "Fiction",
-    "Mystery & Thriller",
-    "Science Fiction",
-    "Fantasy",
-    "Romance",
-    "Horror",
-    "Historical Fiction",
-    "Adventure",
-    "Contemporary Fiction",
-    "Literary Fiction",
-    "Dystopian",
-    "Biography & Memoir",
-    "Self-Help & Personal Development",
-    "Business & Finance",
-    "Health & Wellness",
-    "Psychology",
-    "Science & Technology",
-    "History",
-    "Philosophy",
-    "Travel",
-    "True Crime",
-    "Education",
-    "Textbooks",
-    "Research & Reference",
-    "Law",
-    "Medical",
-    "Engineering",
-    "Mathematics",
-    "Language Learning",
-    "Children & Young Adult",
-    "Picture Books",
-    "Other",
-  ];
+  const bookCategories = [
+    // Fiction Genres
+    "Literary Fiction", "Classic Fiction", "Contemporary Fiction", "Experimental Fiction", "Magical Realism", "Philosophical Fiction", "Metafiction", "Epistolary Fiction", "Stream of Consciousness",
+    
+    // Mystery & Thriller
+    "Detective Fiction", "Hard-Boiled Detective", "Cozy Mystery", "Police Procedural", "Forensic Thriller", "Legal Thriller", "Psychological Thriller", "Spy Thriller", "Crime Fiction", "Noir Fiction", "Serial Killer Thriller", "Political Thriller", "Conspiracy Thriller", "Cybercrime Thriller", "Cold Case Mystery",
+    
+    // Science Fiction
+    "Hard Science Fiction", "Soft Science Fiction", "Space Opera", "Cyberpunk", "Steampunk", "Biopunk", "Post-Cyberpunk", "Military Sci-Fi", "Time Travel Fiction", "Alternate History", "Alien Encounter", "First Contact", "Dystopian Fiction", "Post-Apocalyptic", "Climate Fiction", "Nano-Tech Fiction", "AI Fiction", "Quantum Fiction", "Solar Punk", "Interstellar Fiction", "Xenofiction",
+    
+    // Fantasy
+    "High Fantasy", "Urban Fantasy", "Dark Fantasy", "Epic Fantasy", "Sword & Sorcery", "Heroic Fantasy", "Mythic Fantasy", "Contemporary Fantasy", "Paranormal Fantasy", "Gothic Fantasy", "Supernatural Fantasy", "Grimdark Fantasy", "Portal Fantasy", "Historical Fantasy", "Arthurian Fantasy", "Celtic Fantasy", "Nordic Fantasy", "Asian-inspired Fantasy", "African Fantasy", "Steampunk Fantasy",
+    
+    // Romance
+    "Contemporary Romance", "Historical Romance", "Regency Romance", "Victorian Romance", "Medieval Romance", "Paranormal Romance", "Vampire Romance", "Werewolf Romance", "Shifter Romance", "LGBTQ+ Romance", "M/M Romance", "F/F Romance", "Bisexual Romance", "Transgender Romance", "Erotic Romance", "Sweet Romance", "Romantic Comedy", "Military Romance", "Sports Romance", "Billionaire Romance", "Rock Star Romance", "Small Town Romance", "Enemies to Lovers", "Marriage of Convenience", "Second Chance Romance",
+    
+    // Horror
+    "Supernatural Horror", "Psychological Horror", "Gothic Horror", "Body Horror", "Cosmic Horror", "Folk Horror", "Haunted House", "Zombie Fiction", "Vampire Horror", "Werewolf Horror", "Demonic Possession", "Lovecraftian Horror", "Occult Horror", "Paranormal Horror", "Slasher Horror", "Apocalyptic Horror", "Survival Horror",
+    
+    // Historical Fiction
+    "Ancient History Fiction", "Classical Era", "Roman Empire", "Greek Civilization", "Medieval Fiction", "Renaissance Fiction", "Tudor Period", "Colonial Era", "Revolutionary War", "Civil War Era", "World War I Fiction", "World War II Fiction", "Cold War Fiction", "Vietnam War", "Middle Eastern Historical Fiction", "African Historical Fiction", "Asian Historical Fiction", "Indigenous Historical Fiction",
+    
+    // Non-Fiction
+    "Political Biography", "Celebrity Memoir", "Sports Autobiography", "Military Biography", "Scientific Biography", "Business Biography", "Art & Artist Biography", "Music Biography", "Royal Biography", "Political History", "Military History", "Social History", "Cultural History", "Economic History", "Technological History", "Maritime History", "Archaeological History", "Women's History", "LGBTQ+ History", "Racial History",
+    
+    // Self-Help & Personal Development
+    "Life Coaching", "Career Development", "Personal Finance", "Relationship Advice", "Mental Health", "Emotional Intelligence", "Productivity", "Leadership", "Communication Skills", "Motivation", "Habit Formation", "Mindfulness", "Stress Management", "Self-Confidence", "Creativity Enhancement", "Goal Setting", "Personal Branding", "Time Management", "Decision Making", "Resilience",
+    
+    // Academic & Professional
+    "Academic Research", "Scientific Papers", "Medical Research", "Legal Studies", "Engineering Textbooks", "Computer Science", "Mathematics", "Physics Research", "Chemistry Textbooks", "Biology Studies", "Psychology Textbooks", "Sociology Research", "Anthropology", "Philosophy Texts", "Educational Resources", "Professional Certification",
+    
+    // Specialized Non-Fiction
+    "True Crime", "Travel Writing", "Food & Cooking", "Health & Wellness", "Nutrition", "Fitness", "Alternative Medicine", "Holistic Health", "Yoga", "Meditation", "Spiritual Growth", "Philosophical Texts", "Religious Studies", "Comparative Religion", "Archaeology", "Anthropology", "Linguistics", "Cultural Studies", "Gender Studies",
+    
+    // Children's & Young Adult
+    "Picture Books", "Early Reader", "Middle Grade Fiction", "Young Adult Fiction", "Young Adult Fantasy", "Young Adult Sci-Fi", "Young Adult Romance", "Young Adult Mystery", "Educational Children's Books", "Multicultural Children's Books", "Graphic Novels for Kids", "STEM Children's Books", "Emotional Intelligence for Kids",
+    
+    // Specialized Genres
+    "Poetry", "Experimental Poetry", "Slam Poetry", "Haiku", "Sonnets", "Graphic Novels", "Comic Books", "Manga", "Art Books", "Photography Books", "Architecture", "Design", "Fashion", "Film Studies", "Music Theory", "Theater & Performance", "Maritime Fiction", "Wilderness Survival", "Exploration Narratives", "Adventure Travel", "Philosophical Novels",
+    
+    // Emerging & Niche Categories
+    "Climate Fiction", "Tech Noir", "Afrofuturism", "Indigenous Futurism", "Solarpunk", "Biopunk", "Quantum Fiction", "Speculative Fiction", "Cross-Cultural Fiction", "Translated Literature", "Multilingual Narratives", "Experimental Narrative", "Digital Literature", "Interactive Fiction",
+    
+    "Other" // Catch-all category
+];
+
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">

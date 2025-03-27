@@ -143,7 +143,7 @@ const ApproveBooks = () => {
                       <div>
                         <p className="font-medium">{book.uploadedByName}</p>
                         <p className="text-sm text-gray-500">
-                          {book.uploadedBy.email}
+                          {book.uploadedBy?.email}
                         </p>
                       </div>
                     </td>
