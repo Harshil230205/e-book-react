@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="bg-white py-4 shadow-md">
       <Wrapper className="flex justify-between items-center relative">
         <Link to={"/"} className="text-2xl font-bold">
-          MYBOOK
+          E-BOOK
         </Link>
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/" className="text-gray-600">

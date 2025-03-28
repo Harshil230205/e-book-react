@@ -13,7 +13,7 @@ const MyBooks = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [activeTab, setActiveTab] = useState("all");
 
-  const limit = 10;
+  const limit = 12;
 
   const fetchBooks = async () => {
     setLoading(true);

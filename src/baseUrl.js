@@ -1,1 +1,1 @@
-export const baseUrl = "https://e-book-backend-nirs.onrender.com";
+export const baseUrl = "http://localhost:5000";

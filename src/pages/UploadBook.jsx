@@ -79,7 +79,7 @@ const UploadBook = () => {
     }
   };
 
-  const bookCategories = [
+  const categories = [
     // Fiction Genres
     "Literary Fiction", "Classic Fiction", "Contemporary Fiction", "Experimental Fiction", "Magical Realism", "Philosophical Fiction", "Metafiction", "Epistolary Fiction", "Stream of Consciousness",
     
